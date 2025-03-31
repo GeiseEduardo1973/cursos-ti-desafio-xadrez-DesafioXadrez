@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+//Este código cria um tabuleiro de xadrez de 8x8 usando caracteres de espaço e # para representar as casas brancas e pretas, respectivamente. O tabuleiro é impresso no console.
+
+void printChessBoard() {
+    int i, j;
+    for (i = 0; i < 8; i++) {
+        for (j = 0; j < 8; j++) {
+            if ((i + j) % 2 == 0) {
+                printf("  ");
+            } else {
+                printf("##");
+            }
+        }
+        printf("\n");
+    }
+}
+    //Movimento Torre
+        void moverTorre(int casas){
+            if (casas > 0){
+            printf("TORRE: Direita\n");
+            moverTorre (casas -1);
+            }
+        }
+
+    //movimento Bispo
+        void moverBispo (int casas) {
+        if (casas > 0) {
+            printf("BISPO: Direita\n");
+            moverBispo (casas -1);
+        }
+}
+    //Movimento Rainha
+        void moverRainha (int casas){
+            if (casas > 0) {
+            printf("RAINHA: Esquerda\n");
+            moverRainha (casas -1);
+            }
+        }
+
+int main() {
+
+    //Declaração de Variáveis
+    int i;
+    int movimentoCompleto = 1; //flag para controlar o movimento em L
+    char TORRE, BISPO, RAINHA, CAVALO;
+
+
+
+    printChessBoard();
+
+    //Torre
+    moverTorre (5);
+
+    //Bispo
+    moverBispo (5);
+        i = 1;
+        while (i <= 5) {
+               printf ("BISPO: Para cima\n");
+                i++;
+           }
+
+    //Rainha
+    moverRainha (8);
+
+    //Cavalo
+        while (movimentoCompleto--)
+        {
+            for (int i = 0; i < 2; i++) {
+                printf("CAVALO: Para cima\n");
+            }
+            printf ("CAVALO: Esquerda\n"); //imprime para a esquerda uma vez
+
+        }
+
+    return 0;
+
+}
+
+
+
